@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ececec;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.perfil {
+    text-align: center;
+}
+
+.perfil img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.perfil h2 span {
+    color: #40a2f3;
+}
+
+.iconos span {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.sobre, .habilidades {
+    margin-top: 20px;
+}
+
+.skill {
+    margin-top: 10px;
+}
+
+.skill p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra {
+    height: 8px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.progreso {
+    height: 8px;
+    border-radius: 10px;
+    background: #0584d8;
+}
+
+.p90 {
+    width: 90%;
+}
+
+.p75 {
+    width: 75%;
+}
+
+.titulo {
+    margin-bottom: 10px;
+}
+
+.proyecto {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #04acfa;
+}
+
+.contacto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #2332c0;
+    color: white;
+    cursor: pointer;
+}
