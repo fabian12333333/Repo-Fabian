@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Game.js.funda.Diseñoweb</title>
+
+<style>
+  body {
+    text-align: center;
+    font-family: Arial;
+  }
+
+  #game {
+    width: 800px;
+    height: 400px;
+    border: 3px solid blue;
+    background: #b8a9a9;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  #bala {
+    width: 80px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  #coin {
+    width: 40px;
+    position: absolute;
+    top: 150px;
+    left: 300px;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>Puntos: <span id="score">0</span></h2>
+
+<div id="game">
+  <img id="bala" src="https://fotografias-neox.atresmedia.com/clipping/cmsimages02/2016/07/05/C2B058D0-F6EA-4554-B49C-316E9752F5BB/98.jpg?crop=1280,720,x0,y0&width=1900&height=1069&optimize=high&format=webply">
+
+  <img id="coin" src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png">
+</div>
+
+<script>
+let bala = document.getElementById("bala");
+let coin = document.getElementById("coin");
+
+let score = 0;
+let x = 50;
+let y = 50;
+let speed = 10;
+
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "ArrowUp") y -= speed;
+  if (e.key === "ArrowDown") y += speed;
+  if (e.key === "ArrowLeft") x -= speed;
+  if (e.key === "ArrowRight") x += speed;
+
+  
+  x = Math.max(0, Math.min(750, x));
+  y = Math.max(0, Math.min(350, y));
+
+  bala.style.left = x + "px";
+  bala.style.top = y + "px";
+
+  checkCollision();
+});
+
+
+function checkCollision() {
+  let b = bala.getBoundingClientRect();
+  let c = coin.getBoundingClientRect();
+
+  if (
+    b.left < c.right &&
+    b.right > c.left &&
+    b.top < c.bottom &&
+    b.bottom > c.top
+  ) {
+    score++;
+    document.getElementById("score").textContent = score;
+
+   
+    coin.style.left = Math.random() * 760 + "px";
+    coin.style.top = Math.random() * 360 + "px";
+  }
+}
+</script>
+
+</body>
+</html>
