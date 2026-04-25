@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Contacto</title>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    input, textarea {
+      display: block;
+      margin: 10px 0;
+      padding: 5px;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Formulario de Contacto</h2>
+
+<input type="text" id="nombre" placeholder="nombre">
+<input type="email" id="correo" placeholder="correo">
+<textarea id="descripcion" placeholder="descripion"></textarea>
+
+<button id="btnEnviar">Enviar</button>
+
+<h3>Datos ingresados</h3>
+<table>
+  <thead>
+    <tr>
+      <th> Nombre </th>
+      <th> Correo </th>
+      <th> descripcion </th>
+      <th> edad </th>
+      <th> genero </th>
+    </tr>
+  </thead>
+  <tbody id="tablaDatos"></tbody>
+</table>
+
+<script>
+  document.getElementById("btnEnviar").addEventListener("click", function() {
+
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let descripcion = document.getElementById("descripcion").value;
+
+    let edad = prompt("Ingrese su edad:");
+    let genero = prompt("Ingrese su género:");
+
+    let fila = "<tr>" +
+      "<td>" + nombre + "</td>" +
+      "<td>" + correo + "</td>" +
+      "<td>" + descripcion + "</td>" +
+      "<td>" + edad + "</td>" +
+      "<td>" + genero + "</td>" +
+      "</tr>";
+
+    document.getElementById("tablaDatos").innerHTML += fila;
+  });
+</script>
+
+</body>
+</html>
